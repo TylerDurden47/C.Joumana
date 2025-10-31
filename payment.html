@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Options</title>
+    <link rel="stylesheet" href="payment.css" />
+    <script>
+      async function copy(id, event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const text = el.innerText.trim();
+        const btn =
+          event && event.currentTarget
+            ? event.currentTarget
+            : document.querySelector(`button[onclick*="copy('${id}')"]`) ||
+              null;
+        const originalText = btn ? btn.innerText : null;
+
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            showCopied(btn, originalText);
+            return;
+          }
+        } catch {}
+
+        try {
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.left = "-9999px";
+          textarea.style.top = "0";
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            showCopied(btn, originalText);
+            return;
+          }
+        } catch {}
+
+        if (btn) {
+          btn.innerText = "Tap & hold to copy";
+          setTimeout(() => {
+            if (btn) btn.innerText = originalText;
+          }, 2000);
+        }
+      }
+
+      function showCopied(btn, originalText) {
+        if (!btn) return;
+        btn.innerText = "Copied!";
+        setTimeout(() => {
+          btn.innerText = originalText;
+        }, 1100);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <div class="container">
+      <h1>Select Payment Method</h1>
+      <div class="payment-options">
+        <!-- Vodafone -->
+        <div class="payment-wrapper">
+          <a
+            href="http://vf.eg/vfcash?id=mt&qrId=W29PkC"
+            class="payment-button vodafone"
+          >
+            <div class="payment-icon">
+              <img src="Gallery/Vodafone.png" alt="Vodafone" />
+            </div>
+            <div class="payment-details">
+              <h3>Vodafone</h3>
+              <p id="vodafone-id">@Joumana</p>
+            </div>
+          </a>
+          <button class="copy-btn" onclick="copy('vodafone-id', event)">
+            Copy
+          </button>
+        </div>
+
+        <!-- InstaPay -->
+        <div class="payment-wrapper">
+          <a
+            href="https://ipn.eg/C/Q/ahmed.hamada.meligi/instapay?ISIGN=23052602MEUCIAYr55eIG/iB0zbFt1Vwrz4LlyM2b44oNssA0zIA1hypAiEAjBrU0aiUOcOQkeNvH8745MscDiH177m6mDPvdi0tFpA="
+            class="payment-button instapay"
+          >
+            <div class="payment-icon">
+              <img src="Gallery/InstaPay.png" alt="InstaPay" />
+            </div>
+            <div class="payment-details">
+              <h3>
+                <span style="color: #521f70">INSTA</span
+                ><span style="color: #8258a0">PAY</span>
+              </h3>
+              <p id="instapay-id">ahmed.hamada.meligi</p>
+            </div>
+          </a>
+          <button class="copy-btn" onclick="copy('instapay-id', event)">
+            Copy
+          </button>
+        </div>
+
+        <!-- Telda -->
+        <div class="payment-wrapper">
+          <a
+            href="https://telda.me/joumanakhaled15"
+            class="payment-button telda"
+          >
+            <div class="payment-icon">
+              <img src="Gallery/Telda.png" alt="Telda" />
+            </div>
+            <div class="payment-details">
+              <h3>Telda</h3>
+              <p id="telda-id">@joumanakhaled15</p>
+            </div>
+          </a>
+          <button class="copy-btn" onclick="copy('telda-id', event)">
+            Copy
+          </button>
+        </div>
+
+        <!-- PayPal -->
+        <div class="payment-wrapper">
+          <a
+            class="payment-button paypal"
+            href="https://www.paypal.com/paypalme/grimpharaoh"
+          >
+            <div class="payment-icon">
+              <img src="Gallery/PayPal.png" alt="PayPal" />
+            </div>
+            <div class="payment-details">
+              <h3>
+                <span style="color: #0070e0">Pay</span
+                ><span style="color: #003087">Pal</span>
+              </h3>
+              <p id="paypal-id">@grimpharaoh</p>
+            </div>
+          </a>
+          <button class="copy-btn" onclick="copy('paypal-id', event)">
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+      async function includeHTML(id, file) {
+        const el = document.getElementById(id);
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+        else console.error(`Failed to load ${file}`);
+      }
+
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+    </script>
+  </body>
+</html>

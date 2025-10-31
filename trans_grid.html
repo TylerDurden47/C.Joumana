@@ -1,0 +1,86 @@
+<style>
+  /* ====== TRANSFORMATION PREVIEW GRID ====== */
+  .transformations-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .transformation-card {
+    background: rgba(44, 67, 92, 0.25);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: white;
+  }
+
+  .transformation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-images {
+    display: flex;
+    height: 220px;
+  }
+
+  .card-images img {
+    width: 50%;
+    object-fit: cover;
+  }
+
+  .card-images img {
+    width: 50%;
+    height: 220px; /* fixes preview size */
+    object-fit: cover; /* crops evenly */
+  }
+
+  .transformation-card p {
+    margin: 10px 0 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  h2 {
+    text-align: center;
+    color: #ff3c78;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+
+<h2>Top Transformations</h2>
+<div class="transformations-grid">
+  <a href="transformations.html#amr" class="transformation-card">
+    <div class="card-images">
+      <img src="Gallery/Amr_Before.png" alt="Amr Before" />
+      <img src="Gallery/Amr_After.png" alt="Amr After" />
+    </div>
+    <p>Amr’s Journey</p>
+  </a>
+
+  <a href="transformations.html#mariam" class="transformation-card">
+    <div class="card-images">
+      <img src="Gallery/Mariam_Before.png" alt="Mariam Before" />
+      <img src="Gallery/Mariam_After.png" alt="Mariam After" />
+    </div>
+    <p>Mariam’s Journey</p>
+  </a>
+
+  <a href="transformations.html#abdelwahab" class="transformation-card">
+    <div class="card-images">
+      <img src="Gallery/abdelwahab_Before.png" alt="abdelwahab Before" />
+      <img src="Gallery/abdelwahab_After.png" alt="abdelwahab After" />
+    </div>
+    <p>abdelwahab’s Journey</p>
+  </a>
+</div>

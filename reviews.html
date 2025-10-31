@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Reviews</title>
+    <link rel="stylesheet" href="reviews.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <section class="reviews">
+      <h2>Client Reviews</h2>
+
+      <div class="review-list">
+        <div class="review-card">
+          <div class="review-header">
+            <h3 class="review-name">Mariam shakieep</h3>
+            <span class="review-age">18 yrs</span>
+          </div>
+          <p class="review-text">
+            seriously the plan is amazing, I feel like I’m not deprived of
+            anything in this diet it’s balanced, satisfying, and I actually
+            enjoy it
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">★★★★★</div>
+            <div class="review-goal">Goal: <span>Tone</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3 class="review-name">Mahmoud hamed</h3>
+            <span class="review-age">19 yrs</span>
+          </div>
+          <p class="review-text">
+            Joumana, I just noticed something now and I really want to thank you
+            for it. It might seem like a small thing, but it honestly surprised
+            me ever since my chest alignment improved, I can actually see a
+            clear difference! I’ve trained my chest so many times before, but
+            this is the first time I’ve ever seen it change like this.
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">★★★★★</div>
+            <div class="review-goal">Goal: <span>Gain Weight</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3 class="review-name">Abdelwahab</h3>
+            <span class="review-age">18 yrs</span>
+          </div>
+          <p class="review-text">
+            there’s been huge progress and I’m really satisfied with the
+            results. Honestly, you made such a great plan — I’ve trained with
+            many coaches before, and I used to get bored of their routines, but
+            this one is actually enjoyable and motivating
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">★★★★★</div>
+            <div class="review-goal">Goal: <span>Gain Muscle, Shred</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3 class="review-name">Amira tamer</h3>
+            <span class="review-age">21 yrs</span>
+          </div>
+          <p class="review-text">
+            I’m honestly so happy you can’t imagine how I felt when I saw how I
+            look now! It gave me such huge motivation. At first, I was just
+            going to the gym to pass time, but now I actually want to keep going
+            so I can see even better progress
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">★★★★★</div>
+            <div class="review-goal">Goal: <span>Lose Weight</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3 class="review-name">Mahmoud hamed</h3>
+            <span class="review-age">19 yrs</span>
+          </div>
+          <p class="review-text">
+            Even though we gained a bit of weight at the beginning of the month,
+            at first I was lost and wasn’t planning to go to the gym because I
+            wanted my weight and build to be not suitable for the army
+            requirements. But when I started with you even though I wasn’t 100%
+            consistent I saw really great results. So just imagine how things
+            would be if I had been fully consistent! 💪
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">★★★★★</div>
+            <div class="review-goal">Goal: <span>Gain Weight</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+      async function includeHTML(id, file) {
+        const el = document.getElementById(id);
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+        else console.error(`Failed to load ${file}`);
+      }
+
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+    </script>
+  </body>
+</html>

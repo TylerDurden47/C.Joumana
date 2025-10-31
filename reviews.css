@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0f1120;
+  color: white;
+  text-align: center;
+}
+
+.reviews {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #fff;
+  background: rgba(44, 67, 92, 0.25);
+  border-radius: 15px;
+}
+
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: #ff3c78;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.review-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff9500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-age {
+  font-size: 0.9em;
+  opacity: 0.8;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.review-text {
+  margin: 10px 0;
+  line-height: 1.5;
+  font-size: 1em;
+  color: #e0e0e0;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+
+.review-rating {
+  font-size: 1.2em;
+  color: gold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.review-goal {
+  font-size: 0.9rem;
+  color: #9ed2c6;
+  font-weight: 500;
+}
+
+.review-goal span {
+  color: #ffffff;
+  font-weight: 600;
+}

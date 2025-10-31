@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Transformations</title>
+
+    <link rel="stylesheet" href="transformations.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <div id="trans_grid"></div>
+
+    <!-- ✅ Example of an Individual Client Section -->
+    <section id="amr" class="transformation">
+      <div class="before">
+        <img src="Gallery/Amr_Before.png" alt="Before" />
+        <span class="label">Before</span>
+      </div>
+      <div class="after">
+        <img src="Gallery/Amr_After.png" alt="After" />
+        <span class="label">After</span>
+      </div>
+      <div class="transformation-text">
+        <h3>Amr’s Journey – 12 Weeks</h3>
+        <div class="stats">
+          <div class="stat-item">
+            <p>Weight Loss</p>
+            <strong>15 kg</strong>
+          </div>
+          <div class="stat-item">
+            <p>Body Fat</p>
+            <strong>-12%</strong>
+          </div>
+          <div class="stat-item">
+            <p>Duration</p>
+            <strong>12 Weeks</strong>
+          </div>
+        </div>
+        <p>
+          Amr followed a personalized plan with balanced nutrition and
+          consistent training. His dedication led to amazing results in just 12
+          weeks.
+        </p>
+      </div>
+    </section>
+
+    <section id="mariam" class="transformation">
+      <div class="before">
+        <img src="Gallery/Mariam_Before.png" alt="Before" />
+        <span class="label">Before</span>
+      </div>
+      <div class="after">
+        <img src="Gallery/Mariam_After.png" alt="After" />
+        <span class="label">After</span>
+      </div>
+      <div class="transformation-text">
+        <h3>Mariam’s Journey – 12 Weeks</h3>
+        <div class="stats">
+          <div class="stat-item">
+            <p>Weight Loss</p>
+            <strong>15 kg</strong>
+          </div>
+          <div class="stat-item">
+            <p>Body Fat</p>
+            <strong>-12%</strong>
+          </div>
+          <div class="stat-item">
+            <p>Duration</p>
+            <strong>12 Weeks</strong>
+          </div>
+        </div>
+        <p>
+          Amr followed a personalized plan with balanced nutrition and
+          consistent training. His dedication led to amazing results in just 12
+          weeks.
+        </p>
+      </div>
+    </section>
+
+    <section id="abdelwahab" class="transformation">
+      <div class="before">
+        <img src="Gallery/abdelwahab_Before.png" alt="Before" />
+        <span class="label">Before</span>
+      </div>
+      <div class="after">
+        <img src="Gallery/abdelwahab_After.png" alt="After" />
+        <span class="label">After</span>
+      </div>
+      <div class="transformation-text">
+        <h3>abdelwahab’s Journey – 12 Weeks</h3>
+        <div class="stats">
+          <div class="stat-item">
+            <p>Weight Loss</p>
+            <strong>15 kg</strong>
+          </div>
+          <div class="stat-item">
+            <p>Body Fat</p>
+            <strong>-12%</strong>
+          </div>
+          <div class="stat-item">
+            <p>Duration</p>
+            <strong>12 Weeks</strong>
+          </div>
+        </div>
+        <p>
+          Amr followed a personalized plan with balanced nutrition and
+          consistent training. His dedication led to amazing results in just 12
+          weeks.
+        </p>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      async function includeHTML(id, file) {
+        const el = document.getElementById(id);
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+        else console.error(`Failed to load ${file}`);
+      }
+
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+      includeHTML("trans_grid", "trans_grid.html");
+    </script>
+  </body>
+</html>

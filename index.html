@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Professional fitness coaching with personalized programs, diet plans, and motivation. Transform your body with expert guidance."
+    />
+    <meta
+      name="keywords"
+      content="fitness, personal trainer, workout plans, nutrition, coaching"
+    />
+    <title>C.Joumana - Professional Fitness Coach</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="announcement">
+      <p>Transform your body. Unlock your potential.</p>
+      <a href="#plans">Get Started</a>
+    </div>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        We are a team of professional trainers helping people achieve their
+        fitness goals through personalized programs, diet plans, and motivation.
+      </p>
+    </section>
+
+    <section id="programs">
+      <h2>Our Programs</h2>
+      <div class="programs">
+        <div class="prog-card">
+          <h3>Strength Training</h3>
+          <p>
+            Build muscle, increase power, and feel stronger with tailored
+            routines.
+          </p>
+        </div>
+        <div class="prog-card">
+          <h3>Cardio & Conditioning</h3>
+          <p>
+            Improve endurance, burn fat, and boost your stamina with cardio
+            workouts.
+          </p>
+        </div>
+        <div class="prog-card">
+          <h3>Personal Coaching</h3>
+          <p>
+            Get one-on-one coaching sessions focused on your personal journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <h2>Our Plans</h2>
+      <div class="plans">
+        <a href="payment.html" class="card">
+          <h3>Basic</h3>
+          <div class="plan-details">
+            <div class="plan-detail">✔ Personalized workout plan</div>
+            <div class="plan-detail">✔ Weekly check-ins</div>
+            <div class="plan-detail">✔ Chat support</div>
+            <div class="plan-detail">✔ Progress tracking</div>
+          </div>
+          <hr />
+          <p class="price">
+            <span style="font-size: 50px; font-weight: bold">800</span
+            ><span style="font-size: 14px">/month</span>
+          </p>
+        </a>
+
+        <a href="payment.html" class="card">
+          <h3>Premium</h3>
+          <div class="plan-details">
+            <div class="plan-detail">✔ Personalized training (adjustable)</div>
+            <div class="plan-detail">✔ Flexible nutrition</div>
+            <div class="plan-detail">✔ 24/7 support</div>
+            <div class="plan-detail">✔ Progress tracking</div>
+            <div class="plan-detail">✔ Supplement advice</div>
+          </div>
+          <hr />
+          <p class="price">
+            <span style="font-size: 50px; font-weight: bold">1300</span
+            ><span style="font-size: 14px">/month</span>
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <div id="trans_grid"></div>
+
+    <div id="review_grid"></div>
+
+    <div id="footer"></div>
+
+    <script>
+      async function includeHTML(id, file) {
+        const el = document.getElementById(id);
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+        else console.error(`Failed to load ${file}`);
+      }
+
+      includeHTML("header", "header.html");
+      includeHTML("footer", "footer.html");
+      includeHTML("trans_grid", "trans_grid.html");
+      includeHTML("review_grid", "review_grid.html");
+    </script>
+  </body>
+</html>
